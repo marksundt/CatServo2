@@ -4,21 +4,29 @@
 
 #include "DrawCircle.h"
 
-struct Coordinates
-{
-  int x;
-  int y;
-};
+Coordinates coord;
+float radius;
 
 void DrowCircle()
 {
-  Coordinates coord = { 0, 0};
+  coord = { 0, 0};
 }
 
 void move_center(Servo s1, Servo s2)
 {
    s1.write(90);
    s2.write(90);
+}
+
+void set_radius(float rad)
+{
+  if(rad < 0.0F)
+    rad = 0.0F;
+    
+  if(rad > 50.0F)
+    rad = 50.0F;
+    
+  radius = rad;
 }
 
 Coordinates next_move(int x)

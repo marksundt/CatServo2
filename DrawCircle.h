@@ -2,6 +2,11 @@
 #define DrawCircle_h
 #include <Servo.h>
 
+struct Coordinates {
+  int x;
+  int y;
+};
+
 class DrawCircle
 {
 public: 
@@ -10,11 +15,6 @@ public:
   void move_circle(float radius, int cDelay, Servo s1, Servo s2);
   Coordinates next_move(int x);
   
-  struct Coordinates
-{
-  int x;
-  int y;
-};
 
 private:
 
